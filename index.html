@@ -22,7 +22,7 @@
                         <button onclick="allCaps()">All caps</button>
                         <button onclick="allLowerCase()">tilbake til liten</button>
                         <button onclick="changeToNumbers()">Endre til tall</button>
-                        <button onclick="changeToText()">endre til tekst</button>
+                        <button onclick="changeToTextIf()">endre til tekst</button>
                     </div>
                 </div>
             `;
@@ -47,23 +47,44 @@
         function changeToNumbers() {
             const h1Text = document.getElementById('textbox').innerText;
             let numbers = '';
+
             for (let i = 0; i < h1Text.length; i++) {
                 numbers += h1Text.charCodeAt(i) + ' ';
             }
+            
             document.getElementById('textbox').innerText = numbers;
         }
 
         function changeToText() {
             const numberCode = document.getElementById('textbox').innerText.split(' ');
             let text = '';
+            
             for (let num of numberCode) {
                 if (num.trim() !== '') {
                     text += String.fromCharCode(parseInt(num));
                 }
             }
+
             document.getElementById('textbox').innerText = text;
         }
         
+        function changeToTextIf() {
+            let firstName = document.getElementById('textbox').innerText.trim();
+
+            if (firstName === 'terje' || firstName === 'TERJE' || firstName === 'Terje') {
+                console.log(firstName);
+                return;
+            }
+
+            const numberCode = firstName.split(' ');
+            for (let num of numberCode) {
+                if (isNaN(parseInt(num))) {
+                    return;
+                }
+            }
+        
+            changeToText();
+        }
     </script>
 </body>
 </html>
