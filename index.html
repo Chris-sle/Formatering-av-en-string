@@ -3,88 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formatering av string</title>
+    <title>Modifisering av en eller flere stringer.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="app"></div>
-    <script>
-        //M
-        let firstName = 'terje'
-        
-        //V
-        updateView()
-        function updateView() {
-            document.getElementById('app').innerHTML = /*HTML*/ `
-                <div class="container">
-                    <h1 id="textbox">${firstName}</h1>
-                    <div class="buttons">
-                        <button onclick="CapitalLetter()">Stor forbokstav</button>
-                        <button onclick="allCaps()">All caps</button>
-                        <button onclick="allLowerCase()">tilbake til liten</button>
-                        <button onclick="changeToNumbers()">Endre til tall</button>
-                        <button onclick="changeToTextIf()">endre til tekst</button>
-                    </div>
-                </div>
-            `;
-        }
-
-        //C
-        function CapitalLetter() {
-            firstName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
-            updateView();
-        }
-
-        function allCaps() {
-            firstName = firstName.toUpperCase();
-            updateView();
-        }
-
-        function allLowerCase() {
-            firstName = firstName.toLowerCase();
-            updateView();
-        }
-
-        function changeToNumbers() {
-            const h1Text = document.getElementById('textbox').innerText;
-            let numbers = '';
-
-            for (let i = 0; i < h1Text.length; i++) {
-                numbers += h1Text.charCodeAt(i) + ' ';
-            }
-            
-            document.getElementById('textbox').innerText = numbers;
-        }
-
-        function changeToText() {
-            const numberCode = document.getElementById('textbox').innerText.split(' ');
-            let text = '';
-            
-            for (let num of numberCode) {
-                if (num.trim() !== '') {
-                    text += String.fromCharCode(parseInt(num));
-                }
-            }
-
-            document.getElementById('textbox').innerText = text;
-        }
-        
-        function changeToTextIf() {
-            let firstName = document.getElementById('textbox').innerText.trim();
-
-            if (firstName === 'terje' || firstName === 'TERJE' || firstName === 'Terje') {
-                console.log(firstName);
-                return;
-            }
-
-            const numberCode = firstName.split(' ');
-            for (let num of numberCode) {
-                if (isNaN(parseInt(num))) {
-                    return;
-                }
-            }
-        
-            changeToText();
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+

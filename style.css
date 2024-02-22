@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Kode Mono", monospace;
+    background-color: black;
+    color: greenyellow;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+@keyframes blink {
+    0% { color: black; }
+    50% { color: greenyellow; }
+    100% { color: black; }
+}
+  
+#blinkingEffect {
+    animation: blink 1s infinite; /* Change '1s' to adjust the blink speed */
+}
+
+/* Startpage */
+.startscreen {
+    height: 100dvh;
+    border: 5px dashed greenyellow;
+   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+
+}
+
+.startBtm {
+    height: 100px;
+    width: 200px;
+    background-color: transparent;
+    font-style: italic;
+    border: 10px groove greenyellow;
+    
+}
+
+.startBtm:hover {
+    cursor: pointer;
+    border: 10px ridge yellowgreen;
+}
+/*-------------------------------------------------*/
+
+.BackButton {
+    background-color: transparent;
+    border: 0.5em groove greenyellow;
+    /* margin: 0.5em; */
+}
+.BackButton:hover {
+    cursor: pointer;
+    border: 0.5em ridge yellowgreen;
+}
+
+.Container {
+    /* height: 90svh; */
+    width: 640px;
+    border: 5px dashed greenyellow;
+    padding: 2em;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+.stringContainer {
+    margin-top: 0.8em;
+}
+
+#results, #explanation {
+    width: 300px;
+    height: 200px;
+    border: 5px dashed greenyellow;
+    padding: 0.5em;
+}
+
+.buttonPanel {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5em;
+}
+
+.commandBtm {
+    background-color: transparent;
+    border: 0.3em groove greenyellow;
+}
+
+.commandBtm:hover {
+    border: 0.3em ridge yellowgreen;
+}
+
