@@ -30,7 +30,7 @@ body {
 }
   
 #blinkingEffect {
-    animation: blink 1s infinite; /* Change '1s' to adjust the blink speed */
+    animation: blink 1s infinite;
 }
 
 /* Startpage */
