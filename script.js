@@ -50,10 +50,6 @@ function updateView() {
 }
 
 //C
-// let resultsField = document.getElementById('results');
-// let explanation = document.getElementById('explanation');
-// Spør noen i morgen hvorfor det ikke fungerer med variabler her og ikke i modellen, men at dem må inn i funksjonen.
-
 function updateResultAndExplanation(result, explanation) {
     let resultsField = document.getElementById('results');
     let explanationField = document.getElementById('explanation');
